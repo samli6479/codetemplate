@@ -5,16 +5,16 @@
 **PSEUDOCODE:**
 ```
 1. Initialize TTL Cache:
-   - data_store = {}  # key -> (value, expiration_time)
+   - data_store = {}  # key -> (value, ttl, expiration_time)
    - current_time = 0
 
 2. SET(key, value, ttl):
    a. expiration_time = current_time + ttl
-   b. data_store[key] = (value, expiration_time)
+   b. data_store[key] = (value, ttl, expiration_time)
 
 3. GET(key):
    a. IF key not in data_store: return -1
-   b. (value, expiration_time) = data_store[key]
+   b. (value, ttl, expiration_time) = data_store[key]
    c. IF current_time > expiration_time:
       - delete data_store[key]
       - return -1
@@ -22,15 +22,15 @@
 
 4. RENEW(key, current_time):
    a. IF key not in data_store: return false
-   b. (value, old_expiration) = data_store[key]
+   b. (value, ttl, old_expiration) = data_store[key]
    c. IF current_time > old_expiration: return false
    d. new_expiration = current_time + ttl
-   e. data_store[key] = (value, new_expiration)
+   e. data_store[key] = (value, ttl, new_expiration)
    f. return true
 
 5. COUNT_UNEXPIRED(current_time):
    a. count = 0
-   b. FOR each (key, (value, expiration_time)) in data_store:
+   b. FOR each (key, (value, ttl, expiration_time)) in data_store:
       - IF current_time <= expiration_time:
         * count++
    c. return count
