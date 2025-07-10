@@ -31,7 +31,7 @@
 5. COUNT_UNEXPIRED(current_time):
    a. count = 0
    b. FOR each (key, (value, ttl, expiration_time)) in data_store:
-      - IF current_time <= expiration_time:
+      - IF current_time < expiration_time:
         * count++
    c. return count
 ```

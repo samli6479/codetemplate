@@ -2,21 +2,19 @@
 
 ## 🎯 **HIGH-PRIORITY INTERVIEW PROBLEMS**
 
-### ✅ **COMPLETED** (5/10)
+### ✅ **COMPLETED** (6/8)
 
 1. ✅ **LRU Cache** → System Design Simulation
 2. ✅ **Sudoku Solver** → Backtracking (Grid)
-4. ✅ **Wildcard Matching** → Dynamic Programming (2D)
-7. ✅ **Count Subarrays With Median K** → Prefix Sum with Map
-9. ✅ **Minimum Time to Eat All Grains** → Binary Search (Answer Space)
+3. ✅ **Wildcard Matching** → Dynamic Programming (2D)
+4. ✅ **Time Based Key-Value Store** → System Design Simulation (TTL Cache)
+5. ✅ **Count Subarrays With Median K** → Prefix Sum with Map
+6. ✅ **Minimum Time to Eat All Grains** → Binary Search (Answer Space)
 
-### ❌ **REMAINING** (5/10)
+### ❌ **REMAINING** (2/8)
 
-3. ❌ **Regular Expression Matching** → String Processing
-5. ❌ **Number of Atoms** → String Processing
-6. ❌ **Time Based Key-Value Store** → System Design Simulation
-8. ❌ **Design Authentication Manager** → System Design Simulation
-10. ❌ **Debounce** → System Design Simulation
+7. ❌ **Regular Expression Matching** → String Processing
+8. ❌ **Number of Atoms** → String Processing
 
 ---
 
@@ -24,9 +22,7 @@
 
 ### System Design Simulation
 - LRU Cache ✅
-- Time Based Key-Value Store ❌
-- Design Authentication Manager ❌
-- Debounce ❌
+- Time Based Key-Value Store ✅ (TTL Cache)
 
 ### String Processing
 - Regular Expression Matching ❌
@@ -47,13 +43,10 @@
 ---
 
 ## **NEXT PRIORITY**
-1. **Regular Expression Matching** (String Processing)
-2. **Number of Atoms** (String Processing)
-3. **Time Based Key-Value Store** (System Design)
-4. **Design Authentication Manager** (System Design)
-5. **Debounce** (System Design)
+7. **Regular Expression Matching** (String Processing)
+8. **Number of Atoms** (String Processing)
 
-**Progress: 5/10 high-priority problems covered**
+**Progress: 6/8 high-priority problems covered (75% complete)**
 
 ---
 
