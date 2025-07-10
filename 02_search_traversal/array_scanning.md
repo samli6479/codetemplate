@@ -6,9 +6,9 @@
 ```
 1. Initialize pivot = -1
 
-2. Find pivot (first decreasing element from right):
+2. Find pivot (first element smaller than its successor from right):
    FOR i from n-2 to 0:
-      IF nums[i] > nums[i+1]:
+      IF nums[i] < nums[i+1]:
          pivot = i
          break
 
@@ -26,7 +26,7 @@
 6. Reverse suffix from pivot+1 to n-1
 
 NOTE: For Previous Permutation, use opposite conditions:
-- Step 2: IF nums[i] < nums[i+1] (increasing instead of decreasing)
+- Step 2: IF nums[i] > nums[i+1] (decreasing instead of increasing)
 - Step 4: IF nums[j] < nums[pivot] (smaller instead of larger)
 ```
 
@@ -36,11 +36,14 @@ NOTE: For Previous Permutation, use opposite conditions:
 **EXAMPLE:**
 ```
 Next Permutation:
-Input: [1, 2, 3, 4]
+Input: [1, 2, 3]
 Step 1: pivot = -1
-Step 2: Find pivot → i=2 (nums[2]=3 > nums[3]=4? No) → i=1 (nums[1]=2 > nums[2]=3? No) → i=0 (nums[0]=1 > nums[1]=2? No) → pivot = -1
-Step 3: pivot == -1 → reverse all → [4, 3, 2, 1]
-Output: [4, 3, 2, 1]
+Step 2: Find pivot → i=1 (nums[1]=2 < nums[2]=3? Yes) → pivot = 1
+Step 3: pivot != -1 → continue
+Step 4: Find swap candidate → j=2 (nums[2]=3 > nums[1]=2? Yes) → j=2
+Step 5: Swap nums[1] and nums[2] → [1, 3, 2]
+Step 6: Reverse suffix from 2 to 2 → no change
+Output: [1, 3, 2]
 ```
 
 ---
