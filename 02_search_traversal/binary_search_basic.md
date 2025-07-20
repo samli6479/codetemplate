@@ -1,4 +1,4 @@
-# Binary Search Patterns
+# Basic Binary Search Patterns
 
 ## 1. Binary Search - Standard
 
