@@ -1,4 +1,4 @@
-# Stack-Based Patterns
+# Stack-Based Validation & Expression Evaluation
 
 ## 1. Stack-Based Validation (Generic)
 
@@ -61,40 +61,4 @@
 ```
 "(2+3*(2-1))/2" → 2.5
 "3+(2*2)-1" → 6
-```
-
----
-
-## 3. Monotonic Stack
-
-**PSEUDOCODE:**
-```
-1. Initialize stack = [], result = []
-2. FOR i from 0 to n-1:
-   a. WHILE stack not empty AND condition_met(stack, i):
-      - Pop from stack
-   b. Update result based on stack state
-   c. Push current element to stack
-3. Return result
-```
-
-**TIME:** O(n), **SPACE:** O(n)  
-**USE:** Next greater element, largest rectangle, monotonic problems
-
-**COMMON VARIATIONS:**
-- **Next Greater**: `arr[stack[-1]] < arr[i]`
-- **Next Smaller**: `arr[stack[-1]] > arr[i]`
-- **Previous Greater**: Process from right to left
-- **Previous Smaller**: Process from right to left
-
-**EXAMPLE:**
-```
-arr = [4, 5, 2, 10, 8]
-result = [5, 10, 10, -1, -1]
-```
-
-**KEY INSIGHTS:**
-- Stack maintains monotonic order
-- Each element pushed/popped at most once → O(n) time
-- Use for "next/previous greater/smaller" problems
-- Can handle both array and histogram problems 
+``` 
