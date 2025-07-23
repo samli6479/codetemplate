@@ -4,11 +4,11 @@
 
 **PSEUDOCODE:**
 ```
-1. Create prefix_sum array of size n+1
-2. prefix_sum[0] = 0
+1. prefix = [0] * (n+1)
+2. prefix[0] = 0
 3. FOR i from 0 to n-1:
-   a. prefix_sum[i+1] = prefix_sum[i] + arr[i]
-4. To get sum from i to j: prefix_sum[j+1] - prefix_sum[i]
+   a. prefix[i+1] = prefix[i] + nums[i]
+4. To get sum from i to j: prefix[j+1] - prefix[i]
 ```
 
 **TIME:** O(n) preprocessing, O(1) query, **SPACE:** O(n)  
@@ -16,9 +16,9 @@
 
 **EXAMPLE:**
 ```
-arr = [1, 2, 3, 4, 5]
-prefix_sum = [0, 1, 3, 6, 10, 15]
-Sum from index 1 to 3: prefix_sum[4] - prefix_sum[1] = 10 - 1 = 9
+nums = [1, 2, 3, 4, 5]
+prefix = [0, 1, 3, 6, 10, 15]
+Sum from index 1 to 3: prefix[4] - prefix[1] = 10 - 1 = 9
 ```
 
 ---
@@ -27,15 +27,15 @@ Sum from index 1 to 3: prefix_sum[4] - prefix_sum[1] = 10 - 1 = 9
 
 **PSEUDOCODE:**
 ```
-1. Initialize diff array of size n+1: diff = [0] * (n+1)
-2. FOR each update [start, end, inc]:
+1. diff = [0] * (n+2)
+2. FOR start, end, inc in inputs:
    a. diff[start] += inc
-   b. diff[end + 1] -= inc
-3. Reconstruct array:
-   a. result[0] = diff[0]
-   b. FOR i from 1 to n-1:
-      - result[i] = result[i-1] + diff[i]
-4. Return result
+   b. diff[end+1] -= inc
+3. res = [0] * (n+1)
+4. res[0] = diff[0]
+5. FOR i from 0 to n-1:
+   a. res[i+1] = res[i] + diff[i]
+6. Return res
 ```
 
 **TIME:** O(n + m) where m = number of updates, **SPACE:** O(n)  
