@@ -3,12 +3,12 @@
 **PSEUDOCODE:**
 ```
 1. Sort intervals by start time
-2. Initialize merged = []
+2. merged = []
 3. FOR each interval in sorted order:
-   a. IF merged is empty OR interval.start > merged[-1].end:
-      - merged.append(interval)
+   a. IF merged is empty OR start > merged[-1].end:
+      - add interval to merged
    b. ELSE:
-      - merged[-1].end = max(merged[-1].end, interval.end)
+      - merged[-1].end = max(merged[-1].end, end)
 4. Return merged
 ```
 
