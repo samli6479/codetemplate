@@ -59,14 +59,16 @@ Reconstruct: result = [-2, 0, 3, 5, 3]
 
 **PSEUDOCODE:**
 ```
-1. Initialize prefix_sum = 0, count = 0, sum_count = {}
-2. sum_count[0] = 1  # Empty subarray has sum 0
-3. FOR each num in array:
-   a. prefix_sum += num
-   b. IF (prefix_sum - target) in sum_count:
-      - count += sum_count[prefix_sum - target]
-   c. sum_count[prefix_sum] += 1
-4. Return count
+1. numFreq = {val: count}
+2. numFreq[0] = 1
+3. prefix = 0
+4. total = 0
+5. FOR num in nums:
+   a. prefix += num
+   b. IF prefix - target in numFreq:
+      - total += numFreq[prefix - target]
+   c. numFreq[prefix] += 1
+6. Return total
 ```
 
 **TIME:** O(n), **SPACE:** O(n)  
@@ -74,11 +76,11 @@ Reconstruct: result = [-2, 0, 3, 5, 3]
 
 **EXAMPLE:**
 ```
-arr = [1, 1, 1], target = 2
-prefix_sum: 0, 1, 2, 3
-sum_count: {0:1, 1:1, 2:1, 3:1}
-When prefix_sum=2: check if (2-2)=0 exists → yes, count=1
-When prefix_sum=3: check if (3-2)=1 exists → yes, count=2
+nums = [1, 1, 1], target = 2
+prefix: 0, 1, 2, 3
+numFreq: {0:1, 1:1, 2:1, 3:1}
+When prefix=2: check if (2-2)=0 exists → yes, total=1
+When prefix=3: check if (3-2)=1 exists → yes, total=2
 Result: 2 subarrays
 ```
 
