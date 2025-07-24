@@ -56,15 +56,39 @@ Result: [1, 3, 12, _, _], length=3
 
 ## Fast/Slow Pointers
 
+### Basic: Find Middle Node
+
 **PSEUDOCODE:**
 ```
-1. Initialize slow = fast = head
+1. slow = fast = head
+2. WHILE fast and fast.next:
+   a. slow = slow.next
+   b. fast = fast.next.next
+3. Return slow
+```
+
+**TIME:** O(n), **SPACE:** O(1)  
+**USE:** Find middle node of linked list
+
+**EXAMPLE:**
+```
+List: 1 -> 2 -> 3 -> 4 -> 5
+slow: 1, 2, 3
+fast: 1, 3, 5
+Result: slow = 3 (middle node)
+```
+
+### Advanced: Cycle Detection & Start
+
+**PSEUDOCODE:**
+```
+1. slow = fast = head
 2. WHILE fast and fast.next:
    a. slow = slow.next
    b. fast = fast.next.next
    c. IF slow == fast: break (cycle detected)
 3. IF not fast or not fast.next: return null (no cycle)
-4. Initialize point = head
+4. point = head
 5. WHILE point != slow:
    a. point = point.next
    b. slow = slow.next
@@ -72,7 +96,7 @@ Result: [1, 3, 12, _, _], length=3
 ```
 
 **TIME:** O(n), **SPACE:** O(1)  
-**USE:** Cycle detection, find cycle start, find middle node
+**USE:** Detect cycle and find cycle start
 
 **EXAMPLE:**
 ```
